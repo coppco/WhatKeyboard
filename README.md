@@ -5,8 +5,23 @@ WhatKeyboard是一个自定义的密码输入框键盘
 
 ![预览](http://oak4eha4y.bkt.clouddn.com/WhatKeyboard.png)        
  
-## 近期更新（2017-09-13)
+## 近期更新（2017-09-15)
 
+#### 2017-09-15
+使用自定义密码键盘时, 系统通知是有的, 但是对应的输入框代理方法不会走, 所以需要手动处理.
+1. 新增对UITextView和UITextField, 他们下面两个代理方法的判断能否输入
+
+```
+## UITextViewDelegate
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView;
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
+
+## UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField; 
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string; 
+```
 
 #### 2017-09-13
 
@@ -14,7 +29,7 @@ WhatKeyboard是一个自定义的密码输入框键盘
 2. 支持自动操作, 不用设置代理
 3. 支持设置代理自定义操作
 4. 支持Cocoapods导入
-5. 支持再次输入时清空上传输入的密码
+5. 支持密码输入时, 再次输入清空密码
 6. 支持点击放大显示, 滑动显示
 
 #### 计划中

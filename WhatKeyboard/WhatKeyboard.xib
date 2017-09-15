@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEB-Nj-Qjz" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEB-Nj-Qjz" customClass="WhatButton">
                     <rect key="frame" x="0.0" y="0.0" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="q">
@@ -27,7 +27,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e4-Ql-v5a" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e4-Ql-v5a" customClass="WhatButton">
                     <rect key="frame" x="37.5" y="0.0" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="w">
@@ -37,7 +37,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykm-0G-7k2" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykm-0G-7k2" customClass="WhatButton">
                     <rect key="frame" x="75" y="0.0" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="e">
@@ -47,7 +47,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixI-zp-9gl" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixI-zp-9gl" customClass="WhatButton">
                     <rect key="frame" x="112.5" y="0.0" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="r">
@@ -57,7 +57,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="127-7g-L5U" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="127-7g-L5U" customClass="WhatButton">
                     <rect key="frame" x="150" y="0.0" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="t">
@@ -67,7 +67,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcr-LP-fx8" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcr-LP-fx8" customClass="WhatButton">
                     <rect key="frame" x="187.5" y="0.0" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="y">
@@ -77,7 +77,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpS-jK-QlW" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpS-jK-QlW" customClass="WhatButton">
                     <rect key="frame" x="225" y="0.0" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="u">
@@ -87,7 +87,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-Ke-zMr" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-Ke-zMr" customClass="WhatButton">
                     <rect key="frame" x="262.5" y="0.0" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="i">
@@ -97,7 +97,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3U-7g-CV3" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3U-7g-CV3" customClass="WhatButton">
                     <rect key="frame" x="300" y="0.0" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="o">
@@ -107,14 +107,14 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfY-id-pEU" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfY-id-pEU" customClass="WhatButton">
                     <rect key="frame" x="337.5" y="0.0" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="p">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rga-Xa-F7x" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rga-Xa-F7x" customClass="WhatButton">
                     <rect key="frame" x="19" y="50" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="a">
@@ -125,7 +125,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowLeft" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9o-li-aah" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9o-li-aah" customClass="WhatButton">
                     <rect key="frame" x="56.5" y="50" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="s">
@@ -135,7 +135,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uv7-iJ-oNN" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uv7-iJ-oNN" customClass="WhatButton">
                     <rect key="frame" x="94" y="50" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="d">
@@ -145,7 +145,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oz-5g-VGY" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oz-5g-VGY" customClass="WhatButton">
                     <rect key="frame" x="131.5" y="50" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="f">
@@ -155,7 +155,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cM8-Di-sP8" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cM8-Di-sP8" customClass="WhatButton">
                     <rect key="frame" x="169" y="50" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="g">
@@ -165,7 +165,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtj-du-S9N" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtj-du-S9N" customClass="WhatButton">
                     <rect key="frame" x="206.5" y="50" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="h">
@@ -175,7 +175,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpg-Bq-GKi" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpg-Bq-GKi" customClass="WhatButton">
                     <rect key="frame" x="244" y="50" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="j">
@@ -185,7 +185,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tav-LZ-Uda" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tav-LZ-Uda" customClass="WhatButton">
                     <rect key="frame" x="281.5" y="50" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="k">
@@ -195,7 +195,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pO-SS-obT" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pO-SS-obT" customClass="WhatButton">
                     <rect key="frame" x="319" y="50" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="l">
@@ -207,6 +207,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUv-4R-aQJ" userLabel="切换大小写" customClass="WhatButton">
                     <rect key="frame" x="0.0" y="100" width="37.5" height="50"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -217,7 +218,7 @@
                         <action selector="switchCapital:" destination="iN0-l3-epB" eventType="touchUpInside" id="t2P-fe-0eT"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-Ob-rKk" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-Ob-rKk" customClass="WhatButton">
                     <rect key="frame" x="37.5" y="100" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="z">
@@ -227,7 +228,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KS8-tS-UgB" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KS8-tS-UgB" customClass="WhatButton">
                     <rect key="frame" x="75" y="100" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="x">
@@ -237,7 +238,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRY-1F-P67" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRY-1F-P67" customClass="WhatButton">
                     <rect key="frame" x="112.5" y="100" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="c">
@@ -247,7 +248,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7f-mv-QPB" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7f-mv-QPB" customClass="WhatButton">
                     <rect key="frame" x="150" y="100" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="v">
@@ -257,7 +258,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qP5-en-PEM" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qP5-en-PEM" customClass="WhatButton">
                     <rect key="frame" x="187.5" y="100" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="b">
@@ -267,7 +268,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDK-vH-3dg" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDK-vH-3dg" customClass="WhatButton">
                     <rect key="frame" x="225" y="100" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="n">
@@ -277,7 +278,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShowRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPf-4Q-FnB" customClass="WhatButton">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPf-4Q-FnB" customClass="WhatButton">
                     <rect key="frame" x="262.5" y="100" width="37.5" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="m">
@@ -312,7 +313,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC4-mh-PXU" customClass="WhatButton">
                     <rect key="frame" x="262.5" y="150" width="112.5" height="50"/>
                     <state key="normal" title="确定">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="confirm:" destination="iN0-l3-epB" eventType="touchUpInside" id="HAI-Ce-7nz"/>
@@ -331,26 +332,30 @@
                         <action selector="space:" destination="iN0-l3-epB" eventType="touchUpInside" id="lkV-CA-hlC"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfd-0q-A7S" userLabel="line1">
+                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfd-0q-A7S" userLabel="line1">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.25" id="Z1w-gp-uXt"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Bx-Rc-sFf" userLabel="line2">
+                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Bx-Rc-sFf" userLabel="line2">
                     <rect key="frame" x="0.0" y="50" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.25" id="OJF-ys-ADF"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xls-8q-GjN" userLabel="line3">
+                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xls-8q-GjN" userLabel="line3">
                     <rect key="frame" x="0.0" y="100" width="375" height="0.5"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.25" id="ilk-yE-5xs"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYK-fY-hSd" userLabel="line4">
+                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYK-fY-hSd" userLabel="line4">
                     <rect key="frame" x="0.0" y="150" width="375" height="0.5"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.25" id="2rp-xj-p0A"/>
                     </constraints>
@@ -366,7 +371,7 @@
                     </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="uv7-iJ-oNN" firstAttribute="centerY" secondItem="Rga-Xa-F7x" secondAttribute="centerY" id="0vE-wu-Kkt"/>
                 <constraint firstItem="Y3U-7g-CV3" firstAttribute="height" secondItem="GEB-Nj-Qjz" secondAttribute="height" id="13p-As-Xcs"/>
@@ -540,10 +545,6 @@
                 <outlet property="spaceButton" destination="Zbq-zv-w2C" id="s7r-eG-9gw"/>
                 <outlet property="switchCapitalButton" destination="EUv-4R-aQJ" id="mjR-xE-RcV"/>
                 <outlet property="switchNumberButton" destination="h6k-IC-VPj" id="HGT-ne-zQ6"/>
-                <outletCollection property="lines" destination="Wfd-0q-A7S" collectionClass="NSMutableArray" id="HuH-bj-syr"/>
-                <outletCollection property="lines" destination="5Bx-Rc-sFf" collectionClass="NSMutableArray" id="aoT-oR-jwO"/>
-                <outletCollection property="lines" destination="xls-8q-GjN" collectionClass="NSMutableArray" id="uvP-gJ-TEt"/>
-                <outletCollection property="lines" destination="MYK-fY-hSd" collectionClass="NSMutableArray" id="OWW-NF-T7a"/>
                 <outletCollection property="letterButtons" destination="GEB-Nj-Qjz" collectionClass="NSMutableArray" id="aSI-4Z-0YM"/>
                 <outletCollection property="letterButtons" destination="5e4-Ql-v5a" collectionClass="NSMutableArray" id="Mb9-wQ-Jb5"/>
                 <outletCollection property="letterButtons" destination="Ykm-0G-7k2" collectionClass="NSMutableArray" id="84L-Zt-KU8"/>

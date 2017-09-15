@@ -10,7 +10,7 @@
 #import "WhatKeyboard.h"
 
 
-@interface ViewController ()<WhatKeyboardDelegate>
+@interface ViewController ()<WhatKeyboardDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *myTextField;
 @property (weak, nonatomic) IBOutlet UITextField *autoTextField;
 
@@ -30,17 +30,17 @@
 }
 
 - (void)didBegin:(NSNotification *)notification {
-    NSLog(@"开始编辑");
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     WhatKeyboard *keyboard = [WhatKeyboard keyboard];
     keyboard.delegate = self;
     self.myTextField.inputView = keyboard;
+    //[keyboard customSpaceButtonWithImageName:@"statusDone" enable:false ];
     [self.myTextField becomeFirstResponder];
-    
+    self.myTextField.delegate = self;
     self.autoTextField.inputView = [WhatKeyboard keyboard];
 }
 
@@ -71,5 +71,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (textField == self.myTextField) {
+        if (string.length == 0) {
+            return true;
+        }
+        NSString *pattern = @"^[\\s\\S]{5}$";
+        NSError *error = nil;
+        NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:pattern options:(NSRegularExpressionCaseInsensitive) error:&error];
+        if (error) {
+            return true;
+        }
+        NSLog(@"%@", ([regex matchesInString:textField.text options:(NSMatchingReportProgress) range:NSMakeRange(0, textField.text.length)].count == 0) ? @"可以输入": @"不能输入");
+        return [regex matchesInString:textField.text options:(NSMatchingReportProgress) range:NSMakeRange(0, textField.text.length)].count == 0;
+    }
+    return true;
+    
+}
+//- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+//    return false;
+//}
 @end

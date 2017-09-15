@@ -31,6 +31,8 @@
 /*恢复默认样子*/
 - (void)resetDefault;
 
+- (WhatKeyboard *)customSpaceButtonWithImageName:(NSString *)imageNamge enable:(BOOL)enable;
+
 /*自动操作(键盘上的点击事件自动处理, 不用设置代理), 默认是YES*/
 @property(nonatomic, assign)BOOL autoOperation;
 
