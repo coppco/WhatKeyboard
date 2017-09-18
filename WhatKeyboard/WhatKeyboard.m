@@ -10,6 +10,7 @@
 #import "WhatButton.h"
 #import "UIImage+ColorExtension.h"
 #import "WhatPopView.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation NSObject (YYAdd)
 
@@ -315,7 +316,7 @@ return @(ret); \
 @property(nonatomic, assign)BOOL numberSelected;
 /*清空*/
 @property(nonatomic, assign)BOOL isClear;
-
+@property (nonatomic, assign) SystemSoundID soundID;
 /*输入框*/
 @property(nonatomic, strong)id container;
 @end
@@ -327,6 +328,7 @@ return @(ret); \
     NSLog(@"%@释放了", self.class);
 #endif
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    AudioServicesDisposeSystemSoundID(self.soundID);
 }
 + (instancetype)keyboard {
     WhatKeyboard *keyboard =  [[NSBundle bundleForClass:[self class]] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
@@ -354,6 +356,7 @@ return @(ret); \
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.autoOperation = true;
+    self.isNeedSound = true;
     self.switchCapitalButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     [self.deleteButton setImage:[UIImage imageNamed:@"WhatKeyboard.bundle/keyboard_delete"] forState:(UIControlStateNormal)];
     
@@ -417,11 +420,19 @@ return @(ret); \
 
 #pragma - mark Actions
 
+- (void)playSound {
+    if (self.isNeedSound) {
+        AudioServicesPlaySystemSound(self.soundID);
+    }
+}
+
 - (IBAction)switchCapital:(WhatButton *)sender {
+    [self playSound];
     self.capitalSelected = !self.capitalSelected;
     [self changeCurrentType];
 }
 - (IBAction)switchNumber:(WhatButton *)sender {
+     [self playSound];
     self.numberSelected = !self.numberSelected;
     self.capitalSelected = false;
     [self changeCurrentType];
@@ -448,6 +459,7 @@ return @(ret); \
 #pragma - mark WhatKeyboardDelegate
 
 - (IBAction)delete:(WhatButton *)sender {
+     [self playSound];
     [self clearText];
     if (self.autoOperation) {
         if ([self.container isKindOfClass:[UITextView class]]) {
@@ -465,6 +477,7 @@ return @(ret); \
     }
 }
 - (IBAction)confirm:(WhatButton *)sender {
+     [self playSound];
     if (self.autoOperation) {
         if ([self.container isKindOfClass:[UITextView class]]) {
             UITextView *textView = (UITextView *)self.container;
@@ -481,6 +494,7 @@ return @(ret); \
     }
 }
 - (IBAction)space:(WhatButton *)sender {
+     [self playSound];
     [self clearText];
     if (self.autoOperation) {
         if ([self.container isKindOfClass:[UITextView class]]) {
@@ -549,6 +563,7 @@ return @(ret); \
     
     if (btn) {
         [self clearText];
+         [self playSound];
         if (self.autoOperation) {
             if ([self.container isKindOfClass:[UITextView class]]) {
                 UITextView *textView = (UITextView *)self.container;
@@ -568,6 +583,7 @@ return @(ret); \
             }
         }
     } else if (self.selectButton) {
+         [self playSound];
         [self clearText];
         if (self.autoOperation) {
             if ([self.container isKindOfClass:[UITextView class]]) {
@@ -758,6 +774,14 @@ return @(ret); \
         });
     }
     return _popView;
+}
+
+- (SystemSoundID)soundID {
+    if (_soundID == 0) {
+        NSURL *soundURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"WhatKeyboard.bundle/keyboard-click.aiff" withExtension:nil];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)(soundURL), &_soundID);
+    }
+    return _soundID;
 }
 
 

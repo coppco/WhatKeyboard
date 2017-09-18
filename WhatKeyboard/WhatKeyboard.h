@@ -36,6 +36,9 @@
 /*自动操作(键盘上的点击事件自动处理, 不用设置代理), 默认是YES*/
 @property(nonatomic, assign)BOOL autoOperation;
 
+/*是否需要音效, 默认是true*/
+@property(nonatomic, assign)BOOL isNeedSound;
+
 /*设置代理, 自动操作会失效, 自己管理点击方法*/
 @property (nonatomic, weak) id<WhatKeyboardDelegate> delegate;
 @end
