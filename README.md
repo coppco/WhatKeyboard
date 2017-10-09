@@ -5,7 +5,11 @@ WhatKeyboard是一个自定义的密码输入框键盘
 
 ![预览](http://oak4eha4y.bkt.clouddn.com/WhatKeyboard.png)        
  
-## 近期更新（2017-09-22)
+## 近期更新（2017-10-09)
+
+#### 2017-10-09
+1. 新增九宫格数字键盘
+2. 重构键盘, 完全配置
 
 #### 2017-09-22
 1. 适配Xcode9
@@ -46,43 +50,75 @@ WhatKeyboard是一个自定义的密码输入框键盘
 
 ## 怎么导入
 
-* 方式1
-把`WhatKeyboard`整个文件夹拖入你的工程
+* 手动方式
+把`WhatKeyboard-master`整个文件夹拖入你的工程
 
-* 方式2
+* 使用Cocoapods导入
 使用`Cocoapods`, `pod 'WhatKeyboard'`
 
 ## 怎么使用
-* 首先导入头文件`#import "WhatKeyboard.h"`
-* 自动处理
+
+* 首先导入头文件`#import "WhatKeyboardManager.h"`
+* 快速使用
 
 ```
-self.textField.inputView = [WhatKeyboard keyboard];
+WhatAllKeyboard *keyboard = [WhatAllKeyboard allKeyboardWithConfiguration:([WhatAllKeyboardConfiguration sharedManager])];
+textField.inputView = keyboard;
+
+WhatNumberKeyboard *keyboardNumber = [WhatNumberKeyboard numberKeyboardWithConfiguration:([WhatNumberKeyboardConfiguration sharedManager])];
+textView.inputView = keyboardNumber;
+```
+* 自定义使用, 以下是默认值, 根据实际需要修改相关属性即可
+
+```
+WhatNumberKeyboardConfiguration *config = [WhatNumberKeyboardConfiguration sharedManager];
+
+/*********公共属性*********/
+//音效
+config.soundEffectEnable = true;
+//自定义音效文件
+config.soundResource = nil;
+//长按删除
+config.longPressDeleteEnable = true;
+//安全模式时清空输入框
+config.cleanEnable = true;
+//确定按钮执行的block
+config.didConfirmed = nil;
+//删除按钮正常状态图片
+config.deleteNormalImage = nil;
+//删除按钮高亮状态图片
+config.deleteHighlightImage = nil;
+//确定按钮的标题
+config.confirmName = @"确定";
+//确定按钮的文字颜色
+config.confirmTextColor = [UIColor whiteColor];
+//确定按钮的正常状态背景颜色
+config.confirmNormalBackgroundColor = [[UIColor orangeColor] colorWithAlphaComponent:0.7];
+//确定按钮的高亮状态背景颜色
+config.confirmHighlightBackgroundColor = [UIColor orangeColor];
+    
+/*********特有属性*********/
+//随机键盘
+config.randomEnable = true;
+//小数点
+config.decimalPointEnable = true;
+//是否需要toolbar
+config.toolbarEnable = true;
+//toolbar的logo
+config.securityImage = nil;
+//toolbar标题
+config.middleTitle = @"安全键盘";
+//随机键盘按钮
+config.randomButtonEnable = true;
+//随机按钮
+config.randomNormalImage = @"WhatKeyboard.bundle/see_normal";
+config.randomSelectedImage = @"WhatKeyboard.bundle/peep_normal";
+config.randomHighlightImage = nil;
+config.randomNormalTitle = nil;
+config.randomHighlightTitle = nil;
+config.randomSelectedTitle = nil;
+
+WhatNumberKeyboard *keyboardNumber = [WhatNumberKeyboard numberKeyboardWithConfiguration:config];
+textView.inputView = keyboardNumber;
 ```
 
-* 当然你也可以使用代理, 自己处理
-
-```
-WhatKeyboard *keyboard = [WhatKeyboard keyboard];
-keyboard.delegate = self;
-self.textField.inputView = keyboard;
-
-遵循代理WhatKeyboardDelegate, 实现代理方法
-
-#pragma - mark WhatKeyboardDelegate
-- (void)clearText:(WhatKeyboard *)keyboard {
-    self.textField.text = nil;
-}
-- (void)didClickSpace:(WhatKeyboard *)keyboard {
-    [self.textField insertText:@" "];
-}
-- (void)didClickDelete:(WhatKeyboard *)keyboard {
-    [self.textField deleteBackward];
-}
-- (void)didClickConfirm:(WhatKeyboard *)keyboard {
-    [self.textField resignFirstResponder];
-}
-- (void)didClickCharacter:(WhatKeyboard *)keyboard withString:(NSString *)str {
-    [self.textField insertText:str];
-}
-```

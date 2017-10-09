@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                = 'WhatKeyboard'
-    s.version             = '1.0.3'
+    s.version             = '1.0.4'
     s.summary          = '自定义密码输入键盘'
     s.homepage         = 'https://github.com/coppco/WhatKeyboard'
     s.license              = 'MIT'
@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
     s.default_subspec = 'Core'
 
     s.subspec 'Core' do |ss|
-        ss.source_files = 'WhatKeyboard/*.{h,m}'
+        ss.source_files = 'WhatKeyboard-master/*.{h,m}'
     end
-    s.resources           = 'WhatKeyboard/*.{xib,storyboard,nib,bundle}'
+    s.resources           = 'WhatKeyboard-master/*.{xib,storyboard,nib,bundle}'
     s.requires_arc      = true
 end
