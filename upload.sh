@@ -16,5 +16,8 @@ if [[ $log =~ "successfully" ]]
 then
 echo "上传成功"
 else
-echo "上传失败"
+echo -e "上传失败\n"
+
+echo $log
+
 fi
