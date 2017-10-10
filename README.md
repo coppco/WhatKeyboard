@@ -5,8 +5,16 @@ WhatKeyboard是一个自定义的密码输入框键盘
 
 ![预览](http://oak4eha4y.bkt.clouddn.com/WhatKeyboard.png)        
  
-## 近期更新（2017-10-09)
+## 近期更新（2017-10-10)
 
+#### 2017-10-10
+1. 支持UIKeyInput协议的自定义视图
+2. UIKeyInput协议需要发送通知UIKeyInputWillShowNotification和UIKeyInputWillHideNotification
+```
+[[NSNotificationCenter defaultCenter] postNotificationName:InputPasswordViewDidShowNotification object:self userInfo:@{@"InputView" : self.numberKeyboard}];
+
+[[NSNotificationCenter defaultCenter] postNotificationName:InputPasswordViewDidHideNotification object:self userInfo:@{@"InputView" : self.numberKeyboard}];
+```
 #### 2017-10-09
 1. 新增九宫格数字键盘
 2. 重构键盘, 完全配置

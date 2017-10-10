@@ -16,11 +16,6 @@
  */
 + (instancetype)numberKeyboardWithConfiguration:(WhatNumberKeyboardConfiguration *)config;
 
-/**
- 配置
- */
-@property(nonatomic, strong)WhatNumberKeyboardConfiguration *config;
-
 
 - (void)randomKeyboard;
 

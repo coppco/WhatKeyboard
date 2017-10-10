@@ -16,11 +16,6 @@
  */
 + (instancetype)allKeyboardWithConfiguration:(WhatAllKeyboardConfiguration *)config;
 
-/**
- 配置
- */
-@property(nonatomic, strong)WhatAllKeyboardConfiguration *config;
-
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;

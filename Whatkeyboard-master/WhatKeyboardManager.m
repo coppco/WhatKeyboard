@@ -18,7 +18,7 @@
 }
 
 + (WhatNumberKeyboard *)numberKeyboardWithConfiguration:(WhatNumberKeyboardConfiguration *)config {
-    return [WhatNumberKeyboard numberKeyboardWithConfiguration:([WhatNumberKeyboardConfiguration sharedManager])];
+    return [WhatNumberKeyboard numberKeyboardWithConfiguration:config];
 }
 
 @end

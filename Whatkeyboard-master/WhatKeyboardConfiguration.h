@@ -7,11 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-@class UIColor, UIButton;
+#import <UIKit/UIKit.h>
+/**
+ UIKeyInput键盘将要出现
+ */
+UIKIT_EXTERN NSString * _Nonnull const UIKeyInputWillShowNotification;
+/**
+ UIKeyInput键盘将要隐藏
+ */
+UIKIT_EXTERN NSString * _Nonnull const UIKeyInputWillHideNotification;
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma - mark  父类, 请使用子类
+
 @interface WhatKeyboardConfiguration : NSObject
 
 /**

@@ -7,7 +7,12 @@
 //
 
 #import "WhatKeyboardConfiguration.h"
-#import <UIKit/UIKit.h>
+
+
+NSString *const UIKeyInputWillShowNotification = @"UIKeyInputWillShowNotification";
+NSString *const UIKeyInputWillHideNotification = @"UIKeyInputWillHideNotification";
+
+
 @implementation WhatKeyboardConfiguration
 
 @end
@@ -118,7 +123,7 @@
     //是否需要toolbar
     self.toolbarEnable = true;
     //toolbar的logo
-    self.securityImage = nil;
+    self.securityImage = @"WhatKeyboard.bundle/keyboard_safe";
     //toolbar标题
     self.middleTitle = @"安全键盘";
     //随机键盘按钮

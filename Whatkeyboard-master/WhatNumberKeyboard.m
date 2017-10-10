@@ -17,7 +17,7 @@
 @interface WhatNumberKeyboard()
 @property (weak, nonatomic) IBOutlet WhatButton *deleteB;
 @property (weak, nonatomic) IBOutlet WhatButton *confirmB;
-@property(nonatomic, strong)id container;
+@property(nonatomic, weak)id container;
 @property (strong, nonatomic) IBOutletCollection(WhatButton) NSArray *numbersB;
 @property (weak, nonatomic) IBOutlet WhatButton *decimelB;
 @property(nonatomic, assign)BOOL isClear;
@@ -30,6 +30,10 @@
  默认数组标题
  */
 @property(nonatomic, strong)NSArray *defaultArray;
+/**
+ 配置
+ */
+@property(nonatomic, strong)WhatNumberKeyboardConfiguration *config;
 @end
 
 @implementation WhatNumberKeyboard
@@ -54,6 +58,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndEditing:) name:UITextFieldTextDidEndEditingNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndEditing:) name:UITextViewTextDidEndEditingNotification object:nil];
     
+    //UIKeyInput
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndEditing:) name:UIKeyInputWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndEditing:) name:UIKeyInputWillHideNotification object:nil];
+    
     //旋转
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
@@ -70,13 +78,19 @@
             self.isClear = textV.secureTextEntry && _config.cleanEnable;
             [self resetDefault];
         }
-    }
-    
-    if ([notification.object isKindOfClass:[UITextField class]]) {
+    }else if ([notification.object isKindOfClass:[UITextField class]]) {
         UITextField *textField = (UITextField *)notification.object;
         if (textField.inputView == self) {
             self.container = textField;
             self.isClear = textField.secureTextEntry && _config.cleanEnable;
+            [self resetDefault];
+        }
+    } else if ([notification.object conformsToProtocol:NSProtocolFromString(@"UIKeyInput")]) {
+        UIResponder *object = notification.object;
+        UIView *inputView = notification.userInfo[@"InputView"];
+        if (inputView == self) {
+            self.container = object;
+            self.isClear = [object performSelector:@selector(isSecureTextEntry)] && _config.cleanEnable;
             [self resetDefault];
         }
     }
@@ -87,12 +101,18 @@
         if (textV.inputView == self) {
             self.container = nil;
         }
-    }
-    
-    if ([notification.object isKindOfClass:[UITextField class]]) {
+    }else if ([notification.object isKindOfClass:[UITextField class]]) {
         UITextField *textField = (UITextField *)notification.object;
         if (textField.inputView == self) {
             self.container = nil;
+        }
+    }else if ([notification.object conformsToProtocol:NSProtocolFromString(@"UIKeyInput")]) {
+        UIResponder *object = notification.object;
+        if ([object respondsToSelector:@selector(inputView)]) {
+            UIView *inputView = notification.userInfo[@"InputView"];
+            if (inputView == self) {
+                self.container = nil;
+            }
         }
     }
 }
@@ -105,15 +125,16 @@
         if (self.config.toolbarEnable && !view.inputAccessoryView) {
             view.inputAccessoryView = self.toolbar;
         }
-        return;
-    }
-    
-    if ([self.container isKindOfClass:[UITextField class]]) {
+    }else if ([self.container isKindOfClass:[UITextField class]]) {
         UITextField *view = (UITextField *)self.container;
         if (self.config.toolbarEnable && !view.inputAccessoryView) {
             view.inputAccessoryView = self.toolbar;
         }
-        return;
+    }else if ([self.container conformsToProtocol:NSProtocolFromString(@"UIKeyInput")]) {
+        UIResponder *object = self.container;
+        if (self.config.toolbarEnable && !object.inputAccessoryView) {
+            
+        }
     }
     
 }
@@ -123,12 +144,6 @@
     if (_config.randomEnable) {
         NSArray *array = [self.defaultArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             return (arc4random() % 3) - 1;
-//            int seed = arc4random_uniform(2);
-//            if (seed) {
-//                return [obj1 compare:obj2];
-//            } else {
-//                return [obj2 compare:obj1];
-//            }
         }];
         
         for (int i = 0; i < MIN(array.count, self.numbersB.count); i++) {
@@ -139,8 +154,6 @@
             [self.numbersB[i] setTitle:self.defaultArray[i] forState:(UIControlStateNormal)];
         }
     }
-    
-    
 }
 
 #pragma - mark IBAction
@@ -150,11 +163,16 @@
     if ([self.container isKindOfClass:[UITextView class]]) {
         UITextView *textView = (UITextView *)self.container;
         [textView deleteBackward];
-    }
-    if ([self.container isKindOfClass:[UITextField class]]) {
+    }else if ([self.container isKindOfClass:[UITextField class]]) {
         UITextField *textField = (UITextField *)self.container;
         [textField deleteBackward];
+    }else if ([self.container conformsToProtocol:NSProtocolFromString(@"UIKeyInput")]) {
+        UIResponder *object = self.container;
+        if ([object respondsToSelector:@selector(deleteBackward)]) {
+            [object performSelector:@selector(deleteBackward)];
+        }
     }
+
 }
 
 - (IBAction)confirmAction:(id)sender {
@@ -163,14 +181,17 @@
     if (_config.didConfirmed) {
         _config.didConfirmed(self.confirmB);
     } else {
-        
         if ([self.container isKindOfClass:[UITextView class]]) {
             UITextView *textView = (UITextView *)self.container;
             [textView resignFirstResponder];
-        }
-        if ([self.container isKindOfClass:[UITextField class]]) {
+        }else if  ([self.container isKindOfClass:[UITextField class]]) {
             UITextField *textField = (UITextField *)self.container;
             [textField resignFirstResponder];
+        }else if ([self.container conformsToProtocol:NSProtocolFromString(@"UIKeyInput")]) {
+            UIResponder *object = self.container;
+            if ([object respondsToSelector:@selector(resignFirstResponder)]) {
+                [object performSelector:@selector(resignFirstResponder)];
+            }
         }
     }
 }
@@ -218,11 +239,15 @@
             if ([self shouldPerformBtn:btn]) {
                 [textView insertText:btn.currentTitle];
             }
-        }
-        if ([self.container isKindOfClass:[UITextField class]]) {
+        }else if ([self.container isKindOfClass:[UITextField class]]) {
             UITextField *textField = (UITextField *)self.container;
             if ([self shouldPerformBtn:btn]) {
                 [textField insertText:btn.currentTitle];
+            }
+        }else if ([self.container conformsToProtocol:NSProtocolFromString(@"UIKeyInput")]) {
+            UIResponder *object = self.container;
+            if ([object respondsToSelector:@selector(insertText:)]) {
+                [object performSelector:@selector(insertText:) withObject:btn.currentTitle];
             }
         }
     } else if (self.selectButton) {
@@ -233,11 +258,15 @@
             if ([self shouldPerformBtn:self.selectButton]) {
                 [textView insertText:self.selectButton.currentTitle];
             }
-        }
-        if ([self.container isKindOfClass:[UITextField class]]) {
+        }else if ([self.container isKindOfClass:[UITextField class]]) {
             UITextField *textField = (UITextField *)self.container;
             if ([self shouldPerformBtn:self.selectButton]) {
                 [textField insertText:self.selectButton.currentTitle];
+            }
+        }else if ([self.container conformsToProtocol:NSProtocolFromString(@"UIKeyInput")]) {
+            UIResponder *object = self.container;
+            if ([object respondsToSelector:@selector(insertText:)]) {
+                [object performSelector:@selector(insertText:) withObject:self.selectButton.currentTitle];
             }
         }
     }
@@ -351,11 +380,16 @@
     if ([self.container isKindOfClass:[UITextView class]]) {
         UITextView *textView = (UITextView *)self.container;
         [textView deleteBackward];
-    }
-    if ([self.container isKindOfClass:[UITextField class]]) {
+    }else if ([self.container isKindOfClass:[UITextField class]]) {
         UITextField *textField = (UITextField *)self.container;
         [textField deleteBackward];
+    }else if ([self.container conformsToProtocol:NSProtocolFromString(@"UIKeyInput")]) {
+        UIResponder *object = self.container;
+        if ([object respondsToSelector:@selector(deleteBackward)]) {
+            [object performSelector:@selector(deleteBackward)];
+        }
     }
+
 }
 
 /**清空输入框*/
@@ -364,10 +398,14 @@
         if ([self.container isKindOfClass:[UITextView class]]) {
             UITextView *textView = (UITextView *)self.container;
             textView.text = nil;
-        }
-        if ([self.container isKindOfClass:[UITextField class]]) {
+        }else if ([self.container isKindOfClass:[UITextField class]]) {
             UITextField *textField = (UITextField *)self.container;
             textField.text = nil;
+        }else if ([self.container conformsToProtocol:NSProtocolFromString(@"UIKeyInput")]) {
+            //            UIResponder *object = self.container;
+            //            if ([object respondsToSelector:@selector(deleteBackward)]) {
+            //                [object performSelector:@selector(deleteBackward)];
+            //            }
         }
         self.isClear = false;
     }
@@ -412,7 +450,6 @@
                     return result;
                 }
             }
-            
             
             if (view.delegate && [(NSObject *)(view.delegate) respondsToSelector:@selector(textField:shouldChangeCharactersInRange:replacementString:)]) {
                 result = ((NSNumber *)[(NSObject *)(view.delegate) performSelectorWithArgs: @selector(textField:shouldChangeCharactersInRange:replacementString:), view, NSMakeRange(0, view.text.length), btn.currentTitle]).boolValue;
