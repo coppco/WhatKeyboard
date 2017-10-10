@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class WhatNumberKeyboardConfiguration;
+@class WhatToolbar;
 
 @interface WhatNumberKeyboard : UIView
 
@@ -16,6 +17,7 @@
  */
 + (instancetype)numberKeyboardWithConfiguration:(WhatNumberKeyboardConfiguration *)config;
 
+@property(nonatomic, strong, readonly)WhatToolbar *toolbar;
 
 - (void)randomKeyboard;
 

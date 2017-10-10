@@ -25,7 +25,7 @@
 @property(nonatomic, strong)WhatButton *selectButton;
 @property(nonatomic, strong)NSTimer *timer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *decimalWidth;
-@property(nonatomic, strong)WhatToolbar *toolbar;
+
 /**
  默认数组标题
  */
@@ -313,7 +313,7 @@
     self.decimalWidth.constant = (_config.decimalPointEnable ? 0 : -[UIScreen mainScreen].bounds.size.width * 0.75);
     
     if (_config.toolbarEnable) {
-        self.toolbar = [WhatToolbar toolbar];
+        _toolbar = [WhatToolbar toolbar];
         self.toolbar.imageV.image = [UIImage imageNamed:(_config.securityImage.length > 0 ? _config.securityImage : @"WhatKeyboard.bundle/keyboard_safe")];
         self.toolbar.titleL.text = _config.middleTitle;
         self.toolbar.keyboard = self;
