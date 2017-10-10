@@ -5,6 +5,16 @@ filename="WhatKeyboard.podspec"
 #podspec文件路径
 project_path="$(pwd)/${filename}"
 
-echo "开始上传podspec"
+echo -e "podspec文件路径为: ${project_path}\n"
+
+echo -e "开始上传podspec\n"
 #开始上传
-pod trunk push ${filename}
+log=$(pod trunk push ${project_path})
+
+
+if [[ $log =~ "successfully" ]]
+then
+echo "上传成功"
+else
+echo "上传失败"
+fi
