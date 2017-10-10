@@ -85,7 +85,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndEditing:) name:UITextViewTextDidEndEditingNotification object:nil];
     
     //UIKeyInput
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndEditing:) name:UIKeyInputWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didBeginEditing:) name:UIKeyInputWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndEditing:) name:UIKeyInputWillHideNotification object:nil];
 }
 
