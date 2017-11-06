@@ -515,7 +515,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AW6RFLPGJP;
 				INFOPLIST_FILE = WhatKeyboardDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xcjrbank.WhatKeyboardDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,7 +532,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AW6RFLPGJP;
 				INFOPLIST_FILE = WhatKeyboardDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xcjrbank.WhatKeyboardDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

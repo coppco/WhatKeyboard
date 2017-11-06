@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
     s.name                = 'WhatKeyboard'
-    s.version             = '1.1.0'
+    s.version             = '1.1.1'
     s.summary          = '自定义密码输入键盘'
     s.homepage         = 'https://github.com/coppco/WhatKeyboard'
     s.license              = 'MIT'
     s.author               = { 'coppco' => 'coppco@qq.com' }
-    s.platform           = :ios, '7.0'
+    s.platform           = :ios, '7.1'
     s.source               = { :git => 'https://github.com/coppco/WhatKeyboard.git', :tag => s.version}
     s.default_subspec = 'Core'
 

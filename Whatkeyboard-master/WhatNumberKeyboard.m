@@ -437,7 +437,7 @@
             }
             
             if (view.delegate && [view.delegate respondsToSelector:@selector(textView:shouldChangeTextInRange:replacementText:)]) {
-                result = (BOOL)[(NSObject *)(view.delegate) performSelectorWithArgs: @selector(textView:shouldChangeTextInRange:replacementText:), view, NSMakeRange(0, view.text.length), btn.currentTitle];
+                result = (BOOL)[(NSObject *)(view.delegate) performSelectorWithArgs: @selector(textView:shouldChangeTextInRange:replacementText:), view, NSMakeRange(view.text.length, 0), btn.currentTitle];
             }
         }
         
@@ -452,7 +452,7 @@
             }
             
             if (view.delegate && [(NSObject *)(view.delegate) respondsToSelector:@selector(textField:shouldChangeCharactersInRange:replacementString:)]) {
-                result = ((NSNumber *)[(NSObject *)(view.delegate) performSelectorWithArgs: @selector(textField:shouldChangeCharactersInRange:replacementString:), view, NSMakeRange(0, view.text.length), btn.currentTitle]).boolValue;
+                result = ((NSNumber *)[(NSObject *)(view.delegate) performSelectorWithArgs: @selector(textField:shouldChangeCharactersInRange:replacementString:), view, NSMakeRange(view.text.length, 0), btn.currentTitle]).boolValue;
             }
         }
     }

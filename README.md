@@ -5,7 +5,11 @@ WhatKeyboard是一个自定义的密码输入框键盘
 
 ![预览](http://oak4eha4y.bkt.clouddn.com/WhatKeyboard.png)        
  
-## 近期更新（2017-10-10)
+## 近期更新（2017-11-06)
+
+#### 2017-10-10
+1. 修改ToolBar中logo的大小
+2. 修改执行
 
 #### 2017-10-10
 1. 支持UIKeyInput协议的自定义视图
