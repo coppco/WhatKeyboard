@@ -119,24 +119,23 @@
 
 - (void)resetDefault {
     [self randomKeyboard];
-
+    
     if ([self.container isKindOfClass:[UITextView class]]) {
         UITextView *view = (UITextView *)self.container;
-        if (self.config.toolbarEnable && !view.inputAccessoryView) {
+        if (self.config.toolbarEnable && view.inputAccessoryView != self.toolbar) {
             view.inputAccessoryView = self.toolbar;
         }
     }else if ([self.container isKindOfClass:[UITextField class]]) {
         UITextField *view = (UITextField *)self.container;
-        if (self.config.toolbarEnable && !view.inputAccessoryView) {
+        if (self.config.toolbarEnable && view.inputAccessoryView != self.toolbar) {
             view.inputAccessoryView = self.toolbar;
         }
     }else if ([self.container conformsToProtocol:NSProtocolFromString(@"UIKeyInput")]) {
         UIResponder *object = self.container;
-        if (self.config.toolbarEnable && !object.inputAccessoryView) {
+        if (self.config.toolbarEnable && object.inputAccessoryView != self.toolbar) {
             
         }
     }
-    
 }
 
 /**随机键盘*/
