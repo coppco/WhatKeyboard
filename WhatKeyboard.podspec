@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                = 'WhatKeyboard'
-    s.version             = '1.1.1'
+    s.version             = '1.1.2'
     s.summary          = '自定义密码输入键盘'
     s.homepage         = 'https://github.com/coppco/WhatKeyboard'
     s.license              = 'MIT'
