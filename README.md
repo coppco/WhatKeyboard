@@ -3,7 +3,7 @@
 
 WhatKeyboard是一个自定义的密码输入框键盘
 
-![预览](http://oak4eha4y.bkt.clouddn.com/WhatKeyboard.png)        
+![预览](http://47.96.147.179/images/others/WhatKeyboard.png)        
  
 ## 近期更新（2017-11-06)
 
